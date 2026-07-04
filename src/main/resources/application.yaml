@@ -4,31 +4,9 @@ server:
 spring:
   application:
     name: api-gateway
-  cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedMethods: [GET, POST, PUT, DELETE, PATCH, OPTIONS]
-            allowedHeaders: "*"
-      routes:
-        - id: auth-service
-          uri: http://auth-service:8081
-          predicates:
-            - Path=/iam/api/auth/**
-          filters:
-            - StripPrefix=1
-
-        - id: fleet-service
-          uri: http://fleet-service:8082
-          predicates:
-            - Path=/fleet/api/fleet/**
-          filters:
-            - StripPrefix=1
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:ZmxlZXQtcHVsc2UtbG9jYWwtand0LXNlY3JldC1rZXkhIQ==}
 
 management:
   endpoints:
