@@ -20,7 +20,7 @@ import java.io.IOException;
  * </p>
  */
 @Component
-@Order(-5)
+@Order(-200)
 public class HttpLogFilter extends OncePerRequestFilter {
 
     private static final Logger log = LoggerFactory.getLogger(HttpLogFilter.class);
